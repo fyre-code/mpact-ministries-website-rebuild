@@ -1,26 +1,32 @@
 ---
 const testimonials = [
   {
+    videoId: 'xvDrvHuAD3Y',
     quote: "I grew up in the church hearing about Jesus, but always doubted my salvation. It has been a process since the day I had the revelation of who Jesus is and what He did to me. Today, I'm impacted repeatedly on how forgiven I truly am. My sins don't weigh me down anymore...",
     name: 'Brad',
   },
   {
+    videoId: '2MtJO9fpSIQ',
     quote: "I've had my disability my whole life. It's caused much stress for my family and me When I realized who Jesus was, I knew I finally found someone to give that stress to. Because, He is in me, and I am in Him. He let me throw worry out of my vocabulary. When I was 14, because of Jesus and my doctors, I walked out for the first time. Now, sometimes my wheelchair is an inconvenience. That is nothing shot of God. The freedom I've found in Christ has been life changing. He's allowed me to enjoy who I am and I'm so excited about where I'm going",
     name: 'Justin',
   },
   {
+    videoId: '3pGU4eX9-FY',
     quote: '“I would take him out when I need him, and then put him back when everything is OK. Then it all changed”',
     name: 'Michael',
   },
   {
+    videoId: 'h51BdAkayf4',
     quote: "I really started thinking about God's Grace when a Christian policeman actually showed me grace at the lowest point in my life when I was homeless. There was something different about him. I saw something different in his eyes. I felt peace, like I do now, everyday, knowing what Jesus did to me through his sacrifice. Total peace",
     name: null,
   },
   {
+    videoId: 'LFdOTEvJewM',
     quote: "Listen to Rod's “Discovering Grace” moment and how his relationship with Christ has grown through the years",
     name: 'Rod',
   },
   {
+    videoId: 'sCe05a06TLU',
     quote: "I was one of the most selfish, prideful, arrogant, SOBs you'd ever want to know. As a matter of fact you wouldn't want to know me.... then Christ Changed me",
     name: null,
   },
@@ -32,9 +38,22 @@ const testimonials = [
     <p class="mt-4 text-lg text-gray-600 text-center">See stories of Christ making an impact in people's lives.</p>
     <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {testimonials.map((t) => (
-        <figure class="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm">
-          <blockquote class="text-gray-800 leading-relaxed">"{t.quote}"</blockquote>
-          {t.name && <figcaption class="mt-4 font-semibold text-[var(--color-brand-red)]">- {t.name}</figcaption>}
+        <figure class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col">
+          <div class="aspect-video bg-black">
+            <iframe
+              class="w-full h-full"
+              src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
+              title={t.name ? `${t.name} testimonial` : 'Testimonial video'}
+              loading="lazy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <blockquote class="text-gray-800 leading-relaxed">"{t.quote}"</blockquote>
+            {t.name && <figcaption class="mt-4 font-semibold text-[var(--color-brand-red)]">- {t.name}</figcaption>}
+          </div>
         </figure>
       ))}
     </div>
