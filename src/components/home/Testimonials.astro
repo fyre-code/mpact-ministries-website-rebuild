@@ -15,7 +15,10 @@ const testimonials = [
   {
     quote: "I really started thinking about God's Grace when a Christian policeman actually showed me grace at the lowest point in my life when I was homeless. There was something different about him. I saw something different in his eyes. I felt peace, like I do now, everyday, knowing what Jesus did to me through his sacrifice. Total peace",
     name: null,
-    caption: "Listen to Rod's “Discovering Grace” moment and how his relationship with Christ has grown through the years",
+  },
+  {
+    quote: "Listen to Rod's “Discovering Grace” moment and how his relationship with Christ has grown through the years",
+    name: 'Rod',
   },
   {
     quote: "I was one of the most selfish, prideful, arrogant, SOBs you'd ever want to know. As a matter of fact you wouldn't want to know me.... then Christ Changed me",
@@ -32,7 +35,6 @@ const testimonials = [
         <figure class="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm">
           <blockquote class="text-gray-800 leading-relaxed">"{t.quote}"</blockquote>
           {t.name && <figcaption class="mt-4 font-semibold text-[var(--color-brand-red)]">- {t.name}</figcaption>}
-          {t.caption && <p class="mt-3 text-sm text-gray-600 italic">{t.caption}</p>}
         </figure>
       ))}
     </div>
