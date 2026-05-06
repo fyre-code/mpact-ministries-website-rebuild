@@ -1,0 +1,43 @@
+---
+const testimonials = [
+  {
+    quote: "I grew up in the church hearing about Jesus, but always doubted my salvation. It has been a process since the day I had the revelation of who Jesus is and what He did to me. Today, I'm impacted repeatedly on how forgiven I truly am. My sins don't weigh me down anymore...",
+    name: 'Brad',
+  },
+  {
+    quote: "I've had my disability my whole life. It's caused much stress for my family and me When I realized who Jesus was, I knew I finally found someone to give that stress to. Because, He is in me, and I am in Him. He let me throw worry out of my vocabulary. When I was 14, because of Jesus and my doctors, I walked out for the first time. Now, sometimes my wheelchair is an inconvenience. That is nothing shot of God. The freedom I've found in Christ has been life changing. He's allowed me to enjoy who I am and I'm so excited about where I'm going",
+    name: 'Justin',
+  },
+  {
+    quote: '“I would take him out when I need him, and then put him back when everything is OK. Then it all changed”',
+    name: 'Michael',
+  },
+  {
+    quote: "I really started thinking about God's Grace when a Christian policeman actually showed me grace at the lowest point in my life when I was homeless. There was something different about him. I saw something different in his eyes. I felt peace, like I do now, everyday, knowing what Jesus did to me through his sacrifice. Total peace",
+    name: null,
+    caption: "Listen to Rod's “Discovering Grace” moment and how his relationship with Christ has grown through the years",
+  },
+  {
+    quote: "I was one of the most selfish, prideful, arrogant, SOBs you'd ever want to know. As a matter of fact you wouldn't want to know me.... then Christ Changed me",
+    name: null,
+  },
+];
+---
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-display font-bold text-4xl sm:text-5xl text-gray-900 text-center">Witness Christ Change Lives</h2>
+    <p class="mt-4 text-lg text-gray-600 text-center">See stories of Christ making an impact in people's lives.</p>
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {testimonials.map((t) => (
+        <figure class="bg-gray-50 border border-gray-200 rounded-xl p-6 shadow-sm">
+          <blockquote class="text-gray-800 leading-relaxed">"{t.quote}"</blockquote>
+          {t.name && <figcaption class="mt-4 font-semibold text-[var(--color-brand-red)]">- {t.name}</figcaption>}
+          {t.caption && <p class="mt-3 text-sm text-gray-600 italic">{t.caption}</p>}
+        </figure>
+      ))}
+    </div>
+    <div class="mt-12 text-center">
+      <a href="#brotherhood" class="inline-flex items-center px-8 py-3 rounded-md font-semibold text-white bg-[var(--color-brand-red)] hover:opacity-90 transition">Join The Brotherhood</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+const struggles = [
+  'Lust',
+  'Money Matters',
+  'Fatherhood',
+  'Marriage',
+  'Pornography',
+  'Addiction',
+  'Adultery',
+  'Anger',
+  'Depression',
+  "Caring For Loved Ones with afflictions or disease like Alzheimer's or Dementia.",
+];
+---
+<section id="brotherhood" class="py-20 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="font-display font-bold text-4xl sm:text-5xl text-gray-900 text-center">Brotherhood Support</h2>
+    <div class="mt-8 space-y-4 text-lg text-gray-700 max-w-3xl mx-auto text-center">
+      <p>Do you have questions about your faith? Do you know who you are as a Christian man?</p>
+      <p>Are you struggling or feel trapped and have regret from things you've done, people you've hurt and where you are in life?</p>
+      <p>What about the thorns that bother you and you just can't seem to shake?</p>
+    </div>
+    <ul class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      {struggles.map((s) => (
+        <li class="bg-white border border-gray-200 rounded-lg px-4 py-3 text-center text-sm sm:text-base font-medium text-gray-800 shadow-sm">{s}</li>
+      ))}
+    </ul>
+    <div class="mt-10 space-y-4 text-lg text-gray-700 max-w-3xl mx-auto text-center">
+      <p>Maybe you're haunted by something from your past that still keeps you up at night.</p>
+      <p>Do you ever question God's forgiveness or your righteousness in HIM?</p>
+    </div>
+    <div class="mt-12 text-center">
+      <p class="font-display font-extrabold text-3xl sm:text-4xl text-[var(--color-brand-red)]">STOP WALKING ALONE</p>
+      <a href="#contact" class="mt-6 inline-flex items-center px-8 py-3 rounded-md font-semibold text-white bg-[var(--color-brand-red)] hover:opacity-90 transition">Join The Brotherhood</a>
+    </div>
+  </div>
+</section>

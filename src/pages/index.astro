@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import History from '../components/home/History.astro';
+import Brotherhood from '../components/home/Brotherhood.astro';
+import Testimonials from '../components/home/Testimonials.astro';
+import Podcast from '../components/home/Podcast.astro';
+import Groups from '../components/home/Groups.astro';
+import Devotionals from '../components/home/Devotionals.astro';
+import ContactCTA from '../components/home/ContactCTA.astro';
+
+const seo = {
+  title: 'MPACT Ministries | Christian Men’s Brotherhood in Melbourne, FL',
+  description: 'MPACT Ministries provides a Christian men’s brotherhood, small groups, podcasts, and discipleship in Melbourne, FL. Contact us at mpactmen@mpactministries.org.',
+  keywords: 'MPACT Ministries, Christian men’s ministry, men’s brotherhood, Melbourne FL, Brevard County, men’s small groups, Christian discipleship, Cussin’ Christians podcast, men’s faith group, Trey Etheridge, men passionate about Christ, grace',
+  image: '/images/logo.webp',
+  imageAlt: 'MPACT Ministries logo representing total faith in Christ and a men’s ministry in Melbourne Fl',
+  url: 'https://www.mpactministries.org/',
+  siteName: 'MPACT Ministries',
+};
+---
+<BaseLayout {...seo}>
+  <Header />
+  <main>
+    <Hero />
+    <History />
+    <Brotherhood />
+    <Testimonials />
+    <Podcast />
+    <Groups />
+    <Devotionals />
+    <ContactCTA />
+  </main>
+  <Footer />
+</BaseLayout>
