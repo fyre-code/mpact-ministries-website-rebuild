@@ -1,0 +1,79 @@
+---
+const formUrl = 'https://hyppohq.io/f/join-the-brotherhood?theme=light';
+const flyerAlt = 'truth Tuesday promotional flyer for impact ministries representing men coming together for Christ in a group';
+const groups = [
+  {
+    name: "Men's Monday",
+    body: "Join other young men from around the country via this ZOOM study of men's issues, deep biblical concepts and brotherhood. Mondays at 8pm EST (3rd Monday of the month is 8:30pm EST)",
+    flyer: null,
+  },
+  {
+    name: 'Truth Tuesday',
+    body: 'Every other Tuesday we tackle our weaknesses, our strengths and what Jesus truly did to us when we became believers.\nEvery other Tuesday, 6:30 - 7:30am EST at Church at Viera.',
+    flyer: '/images/popup/flyer-truth-tuesday.jpeg',
+  },
+  {
+    name: 'Sunshine Brotherhood',
+    body: 'Every Wednesday, MPACT Brothers meet at Rotary Park at Suntree and get real with one another. Join us each week as we discover Grace One Man At a Time.\nWednesdays 30 minutes before sunrise.',
+    flyer: '/images/popup/flyer-sunshine-brotherhood.jpg',
+  },
+  {
+    name: 'MPACT Warriors',
+    body: "Veterans, join us to come and heal through God's grace and learn about the finished work of the cross.\n1st& 3rd Tuesdays each month",
+    flyer: '/images/popup/flyer-mpact-warriors.jpeg',
+  },
+  {
+    name: 'MPACT South Georgia',
+    body: 'Joins us near Brunswick, Georgia at American Patriot Gun Club as men come and discover grace and healing one man at a time.\n9am, every third Thursday of the month.',
+    flyer: '/images/popup/flyer-mpact-south-georgia.png',
+  },
+];
+---
+<div id="groups-popup" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="groups-popup-title">
+  <div id="groups-popup-backdrop" class="absolute inset-0 bg-black/70"></div>
+  <div class="relative bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+    <button id="groups-popup-close" type="button" aria-label="Close" class="sticky top-4 ml-auto mr-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-gray-700 hover:bg-gray-100 shadow z-10 float-right">
+      <span aria-hidden="true" class="text-2xl leading-none">&times;</span>
+    </button>
+    <div class="px-6 sm:px-10 pb-10 pt-2">
+      <h2 id="groups-popup-title" class="font-display font-bold text-3xl sm:text-4xl text-gray-900 text-center">Join Our Groups</h2>
+      <div class="mt-8 space-y-10">
+        {groups.map((g) => (
+          <div class="text-center">
+            <h3 class="font-display font-bold text-2xl text-[var(--color-brand-red)]">{g.name}</h3>
+            <p class="mt-3 text-gray-700 leading-relaxed whitespace-pre-line">{g.body}</p>
+            {g.flyer && (
+              <img src={g.flyer} alt={flyerAlt} class="mt-4 mx-auto rounded-lg shadow max-h-72 w-auto" />
+            )}
+            <a href={formUrl} target="_blank" rel="noopener" class="mt-5 inline-flex items-center px-6 py-2.5 rounded-md font-semibold text-white bg-[var(--color-brand-red)] hover:opacity-90 transition">Get Started</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var popup = document.getElementById('groups-popup');
+    var closeBtn = document.getElementById('groups-popup-close');
+    var backdrop = document.getElementById('groups-popup-backdrop');
+    if (!popup) return;
+    function open() {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    setTimeout(open, 5000);
+    closeBtn && closeBtn.addEventListener('click', close);
+    backdrop && backdrop.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
