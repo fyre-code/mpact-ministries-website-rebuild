@@ -75,5 +75,11 @@ const groups = [
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') close();
     });
+    document.querySelectorAll('[data-open-groups-popup]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        open();
+      });
+    });
   })();
 </script>
