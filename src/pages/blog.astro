@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const seo = {
+  title: 'Devotionals | MPACT Ministries',
+  description: 'Read devotionals from MPACT Ministries — a Christian men’s brotherhood in Melbourne, FL.',
+  keywords: 'MPACT Ministries devotionals, Christian men’s devotionals, Melbourne FL men’s ministry blog',
+  image: 'https://pbrlhyansxjdndccwtau.supabase.co/storage/v1/object/public/media-public/e669c67e-2f4b-4bd5-9546-79fb77d9a824/root/1778086613893_logo.webp',
+  imageAlt: 'MPACT Ministries logo',
+  url: 'https://www.mpactministries.org/blog',
+  siteName: 'MPACT Ministries',
+};
+---
+<BaseLayout {...seo}>
+  <Header />
+  <main>
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="font-display font-bold text-4xl sm:text-5xl text-gray-900 mb-8">Devotionals</h1>
+        <div id="hyppo-blog-devotionals"></div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <script is:inline>
+    (function(){
+      var d=document,f=d.createElement('iframe');
+      f.src='https://hyppohq.io/blog/mpact-ministries-bac32fa9/devotionals?embed=true';
+      f.style.cssText='width:100%;min-height:600px;border:none;overflow:hidden';
+      f.allowFullscreen=true;f.loading='lazy';
+      d.getElementById('hyppo-blog-devotionals').appendChild(f);
+      window.addEventListener('message',function(e){
+        if(e.data&&e.data.type==='hyppo-blog-resize')f.style.height=e.data.height+'px';
+      });
+    })();
+  </script>
+</BaseLayout>
